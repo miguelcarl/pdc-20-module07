@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <body ng-app="">
+        <h1>Welcome Guest!</h1>
+        <form name="form">
+        Click the first box to register: 
+                        <input type="checkbox" ng-model="toShow" ng-init="myVar=false">
+                        <input type="checkbox" ng-model="myVar3" ng-init="myVar=true">
+                        <input type="checkbox" ng-model="myVar4" ng-init="myVar=true">
+                        <input type="checkbox" ng-model="myVar5" ng-init="myVar=true">
+                        <input type="checkbox" ng-model="myVar6" ng-init="myVar=true">
+                        <input type="checkbox" ng-model="myVar7" ng-init="myVar=true">
+        
+            <div ng-if="toShow">
+            <p>Register</p>
+            <label>Email/Username: </label>
+            <input type="text">
+            </br>
+            <label>Password: </label>
+            <input type="password">
+            <br>
+            <label>Confirm Password: </label>
+            <input type="password">
+            <br>
+            <input type="button" ng-disabled="form.$invalid" ng-click="toShow = true" value="Sign-In"/>
+        </div>
+
+        <div ng-if="myVar3">
+            <label>Click me to make text readonly: </label>
+            <input type="checkbox" ng-model="checked"> <br>
+
+            <input type="text" ng-readonly="checked" value=""/>
+        </div>
+        
+        <div ng-if="myVar4">
+            <label>Click me to make text disabled: </label>
+            <input type="checkbox" ng-model="disabled"> <br>
+
+            <input type="text" ng-disabled="disabled" value=""/>
+        </div>
+        
+            <div ng-if="myVar5">
+            <label>Click me to hide text: </label>
+            <input type="checkbox" ng-model="hide"> <br>
+
+            <input type="text" ng-hide="hide" value=""/>
+        </div>
+
+        <div ng-if="myVar6">
+            <label>Click me to show text: </label>
+            <input type="checkbox" ng-model="show"> <br>
+
+            <input type="text" ng-show="show" value=""/>
+        </div>
+
+        <div ng-if="myVar7">
+            <input type="button" ng-click="toShow=false" value="Logout"/>
+        </div>
+
+        </form>
+    </body>
+</html>
